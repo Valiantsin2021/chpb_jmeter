@@ -1,0 +1,21 @@
+name: CHPB web app JMeter tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: [master]
+
+jobs:
+  action_build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run JMeter Action on a test
+        uses: rbhadti94/apache-jmeter-action@v0.5.0
+        with:
+          testFilePath: chpb.jmx
+          outputReportsFolder: reports/
+          args: "--loglevel INFO"
