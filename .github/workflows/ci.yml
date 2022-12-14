@@ -16,7 +16,7 @@ jobs:
       - name: Apache JMeter
         uses: rbhadti94/apache-jmeter-action@v0.6.0
         with:
-          testFilePath: chpb.jmx
+          testFilePath: test/
           outputReportsFolder: reports/
           args: "--loglevel INFO"
           
