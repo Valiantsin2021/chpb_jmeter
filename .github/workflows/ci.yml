@@ -12,16 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      - name: Apache JMeter
-        uses: rbhadti94/apache-jmeter-action@v0.6.0
+      - name: JMeter Test
+        uses: QAInsights/PerfAction@v3.1
         with:
-          testFilePath: test/
-          outputReportsFolder: reports/
+          test-plan-path: test/*.jmx
           args: "--loglevel INFO"
-          
-      - name: Upload artifacts 
+      - name: Upload Results
         uses: actions/upload-artifact@v3
         with:
-          name: jmeter-test-results
-          path: reports/
+          name: jmeter-results
+          path: result.jtl
