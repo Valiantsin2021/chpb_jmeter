@@ -3,9 +3,9 @@ name: CHPB web app JMeter tests
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   action_build:
