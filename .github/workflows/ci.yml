@@ -15,7 +15,7 @@ jobs:
       - name: JMeter Test
         uses: QAInsights/PerfAction@v3.1
         with:
-          test-plan-path: test/*.jmx
+          test-plan-path: test/chpb.jmx
           args: "--loglevel INFO"
       - name: Upload Results
         uses: actions/upload-artifact@v3
